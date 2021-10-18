@@ -9,7 +9,7 @@ const HeaderOption = ({
   avatar,
   title,
   Icon,
-  to,
+  to = false,
   onClick,
   drop = false,
   image,

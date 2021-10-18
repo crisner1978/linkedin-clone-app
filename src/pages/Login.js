@@ -28,15 +28,15 @@ const Login = () => {
             </Hero>
             <Search>
               <Wrapper>
-                <a href="">Search for a job</a>
+                <a href="https://www.linkedin.com/jobs/jobs-in-smyrna-tn?trk=homepage-basic_intent-module-jobs">Search for a job</a>
                 <NavigateNextIcon />
               </Wrapper>
               <Wrapper>
-                <a href="">Find a person you know</a>
+                <a href="https://www.linkedin.com/pub/dir/+/+?trk=homepage-basic_intent-module-people">Find a person you know</a>
                 <NavigateNextIcon />
               </Wrapper>
               <Wrapper>
-                <a href="">Learn a new skill</a>
+                <a href="https://www.linkedin.com/learning/search?trk=homepage-basic_intent-module-learning">Learn a new skill</a>
                 <NavigateNextIcon />
               </Wrapper>
             </Search>

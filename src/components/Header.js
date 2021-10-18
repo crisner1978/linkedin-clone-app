@@ -62,7 +62,7 @@ const Header = ({ dropdown, dropdownRef, openUp }) => {
             <HeaderOption
               title="Learning"
               Icon={ChromeReaderModeOutlinedIcon}
-              to
+              href="https://www.linkedin.com/learning/?trk=nav_neptune_learning&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BK26XnkbATj%2BwWDvaemGhCg%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_feed-nav_learning"
             />
           </Work>
         </ContentRight>
