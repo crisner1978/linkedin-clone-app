@@ -35,6 +35,13 @@ const Container = styled.div`
   width: 1128px;
   margin-left: auto;
   margin-right: auto;
+  height: 100vh;
+  @media only screen and (max-width: 768px){
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -50,18 +57,11 @@ const Wrapper = styled.div`
   @media screen and (max-width: 992px) {
     margin-left: auto;
     margin-right: auto;
-    /* grid-template-columns: minmax(0, 7fr) minmax(0, 17fr);
-    grid-template-rows: auto; */
   }
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    /* padding-left: auto;
-    padding-right: auto; */
-    /* max-width: 576px; */
-    /* grid-template-columns: minmax(0, 1fr);
-    column-gap: 1.2rem;
-    row-gap: 1.2rem; */
+    margin-left: auto;
+    margin-right: auto;
   }
 `;

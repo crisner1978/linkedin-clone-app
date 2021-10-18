@@ -19,7 +19,7 @@ const Sidebar = () => {
         <img className="avatar_bg" src="/images/BgImg4Link.jpeg" alt="" />
         <Avatar className="avatar" src={user?.photoUrl} />
         <h2>{user.displayName}</h2>
-        <h4>{user.email}</h4>
+        <h4><a href={`mailto: ${user.email}`}>{user.email}</a></h4>
       </WrapperTop>
       <StatBox>
         <Stats>
@@ -55,6 +55,11 @@ const Container = styled.div`
   position: -webkit-sticky;
   @media screen and (max-width: 992px) {
     margin-top: 16px;
+  }
+  @media only screen and (max-width: 768px){
+    max-width: 576px;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
 
 `;

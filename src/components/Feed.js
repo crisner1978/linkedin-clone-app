@@ -15,7 +15,7 @@ import {
   serverTimestamp,
   query,
   orderBy,
-  onSnapshot
+  onSnapshot,
 } from "@firebase/firestore";
 
 const Feed = () => {
@@ -26,11 +26,17 @@ const Feed = () => {
 
   useEffect(() => {
     const q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
-    const unsub = onSnapshot(q, snapshot => 
-      setPosts(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id, data: doc.data() })))
+    const unsub = onSnapshot(q, (snapshot) =>
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
     );
     return unsub;
-  }, [])
+  }, []);
 
   const sendPost = async (e) => {
     e.preventDefault();
@@ -72,18 +78,17 @@ const Feed = () => {
           />
         </OptionWrapper>
       </PostWrapper>
-    <FlipMove>
-      {posts.map(({ id, data: {name, desc, message, photoUrl} }) => (
-        <Posts
-          key={id}
-          name={name}
-          desc={desc}
-          message={message}
-          photoUrl={photoUrl}
-        />
-      ))}
-    </FlipMove>
-      
+      <FlipMove>
+        {posts.map(({ id, data: { name, desc, message, photoUrl } }) => (
+          <Posts
+            key={id}
+            name={name}
+            desc={desc}
+            message={message}
+            photoUrl={photoUrl}
+          />
+        ))}
+      </FlipMove>
     </Container>
   );
 };
@@ -93,10 +98,17 @@ export default Feed;
 const Container = styled.main`
   max-width: 1128px;
   height: 100%;
-  flex: 0.5;
+  flex: 0.45;
   margin: -12px 20px 0;
   @media screen and (max-width: 992px) {
     margin-top: 4px;
+  }
+  @media only screen and (max-width: 768px) {
+    max-width: 576px;
+    margin-bottom: 20px;
+    padding-left: auto;
+    padding-right: auto;
+    margin: 0px;
   }
 `;
 

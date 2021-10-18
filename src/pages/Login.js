@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Signup from "./Signup";
-
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const Login = () => {
   const [join, setJoin] = useState(false);
@@ -26,13 +26,30 @@ const Login = () => {
               <h1>Welcome to your professional community</h1>
               <img src="/images/hero-img.svg" alt="" />
             </Hero>
-            <Form>
-              <Google>
-                <img src="/images/google.svg" alt="" />
-                <span>Sign in with Google</span>
-              </Google>
-            </Form>
+            <Search>
+              <Wrapper>
+                <a href="">Search for a job</a>
+                <NavigateNextIcon />
+              </Wrapper>
+              <Wrapper>
+                <a href="">Find a person you know</a>
+                <NavigateNextIcon />
+              </Wrapper>
+              <Wrapper>
+                <a href="">Learn a new skill</a>
+                <NavigateNextIcon />
+              </Wrapper>
+            </Search>
           </Section>
+          <Bottom>
+            <HeroBottom>
+              <h2>
+                Join your colleagues, classmates, and friends on LinkedIn.
+              </h2>
+              <button onClick={() => setJoin(!join)}>Get started</button>
+              <img src="/images/Linkedin-wallpaper.svg" alt="" />
+            </HeroBottom>
+          </Bottom>
         </>
       )}
     </Container>
@@ -186,7 +203,7 @@ const Hero = styled.div`
   }
 `;
 
-const Form = styled.div`
+const Search = styled.ul`
   margin-top: 52px;
   padding: 0 24px 0 24px;
   width: 400px;
@@ -198,31 +215,95 @@ const Form = styled.div`
   }
 `;
 
-const Google = styled.button`
+const Wrapper = styled.li`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #fff;
+  margin-bottom: 10px;
   padding: 0 24px;
   height: 56px;
   width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
-  -webkit-box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+  border-radius: 8px;
   vertical-align: middle;
   transition-duration: 167ms;
   font-size: 20px;
-  color: #0a66c2;
-  font-weight: 500;
-  border: 1px solid #0a66c2;
+  font-weight: 400;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  a {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+  }
 
   &:hover {
-    background-color: #ecf4fe;
-    -webkit-box-shadow: inset 0px 0px 0px 1px #025cb9;
-    box-shadow: inset 0px 0px 0px 1px #025cb9;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 30%);
   }
   span {
     padding-left: 30px;
     font-weight: 500;
+  }
+`;
+
+const Bottom = styled.section`
+  padding: 20px 0;
+  padding-left: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 60px; */
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const HeroBottom = styled.div`
+  img {
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    object-fit: cover;
+    height: 50%;
+    width: 100%;
+  }
+  h2 {
+    max-width: 1128px;
+    display: block;
+    margin-block-start: 20px;
+    margin-block-end: 40px;
+    font-size: 56px;
+    font-weight: 200;
+    z-index: 1;
+    position: relative;
+    margin-top: -60px;
+    margin-bottom: 40px;
+    word-break: keep-all;
+  }
+  button {
+    z-index: 1;
+    border: none;
+    padding: 8px 20px;
+    position: relative;
+    border-radius: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition-duration: 167ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    min-height: 56px;
+    text-align: center;
+    background-color: #0a66c2;
+    transition: opacity 334ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media (max-width: 768px) {
+      margin: 2px 0 2px 4px;
+      padding: 7px 18px;
+    }
+
+    &:hover {
+      background-color: #004182;
+            text-decoration: underline;
+    }
   }
 `;
