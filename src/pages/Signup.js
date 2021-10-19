@@ -108,7 +108,7 @@ export default Signup;
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   background-color: #f3f2ef;
   place-items: center;

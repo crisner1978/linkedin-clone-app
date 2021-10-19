@@ -35,7 +35,7 @@ const Container = styled.div`
   width: 1128px;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh;
+  height: 100%;
   @media only screen and (max-width: 768px){
     height: 100%;
     margin-left: auto;

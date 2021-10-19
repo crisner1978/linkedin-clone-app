@@ -28,15 +28,21 @@ const Login = () => {
             </Hero>
             <Search>
               <Wrapper>
-                <a href="https://www.linkedin.com/jobs/jobs-in-smyrna-tn?trk=homepage-basic_intent-module-jobs">Search for a job</a>
+                <a href="https://www.linkedin.com/jobs/jobs-in-smyrna-tn?trk=homepage-basic_intent-module-jobs">
+                  Search for a job
+                </a>
                 <NavigateNextIcon />
               </Wrapper>
               <Wrapper>
-                <a href="https://www.linkedin.com/pub/dir/+/+?trk=homepage-basic_intent-module-people">Find a person you know</a>
+                <a href="https://www.linkedin.com/pub/dir/+/+?trk=homepage-basic_intent-module-people">
+                  Find a person you know
+                </a>
                 <NavigateNextIcon />
               </Wrapper>
               <Wrapper>
-                <a href="https://www.linkedin.com/learning/search?trk=homepage-basic_intent-module-learning">Learn a new skill</a>
+                <a href="https://www.linkedin.com/learning/search?trk=homepage-basic_intent-module-learning">
+                  Learn a new skill
+                </a>
                 <NavigateNextIcon />
               </Wrapper>
             </Search>
@@ -47,8 +53,8 @@ const Login = () => {
                 Join your colleagues, classmates, and friends on LinkedIn.
               </h2>
               <button onClick={() => setJoin(!join)}>Get started</button>
-              <img src="/images/Linkedin-wallpaper.svg" alt="" />
             </HeroBottom>
+            <img src="/images/Linkedin-wallpaper.svg" alt="" />
           </Bottom>
         </>
       )}
@@ -60,7 +66,7 @@ export default Login;
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   padding: 0px;
   z-index: -5;
@@ -148,6 +154,7 @@ const Section = styled.section`
   position: relative;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
   max-width: 1128px;
   align-items: center;
   margin: auto;
@@ -246,26 +253,26 @@ const Wrapper = styled.li`
 `;
 
 const Bottom = styled.section`
-  padding: 20px 0;
-  padding-left: 24px;
-
+  padding: 20px 24px;
+  margin-left: 24px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* margin-left: 60px; */
   margin-left: auto;
   margin-right: auto;
+  img {
+    position: absolute;
+    top: 160%;
+    right: 0;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+  }
 `;
 
 const HeroBottom = styled.div`
-  img {
-    position: absolute;
-    bottom: -15%;
-    right: 0;
-    object-fit: cover;
-    height: 50%;
-    width: 100%;
-  }
   h2 {
     max-width: 1128px;
     display: block;
@@ -303,7 +310,7 @@ const HeroBottom = styled.div`
 
     &:hover {
       background-color: #004182;
-            text-decoration: underline;
+      text-decoration: underline;
     }
   }
 `;
